@@ -34,6 +34,10 @@
     align-items: center;
 }
 
+#darkMode-icon{
+    color: var(--text-color);
+}
+
 p,label,li{
     color: var(--text-color);
 }
@@ -44,7 +48,7 @@ p,label,li{
     display: flex;
 }
 
-.title{
+#title{
     font-size: 2rem;
 }
 
@@ -73,8 +77,7 @@ p,label,li{
 /*---- Window ---- */
 
 .section{
-    min-height: 80%;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
 }
@@ -95,7 +98,7 @@ li span{
     font-size: 4em;
 }
 
-#countdown-complete{
+#countdown-complete-animation{
     font-size: 1.2rem;
     animation: complete 2s infinite;
 }

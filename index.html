@@ -19,12 +19,12 @@
         <div class="container p-3">
             
             <div class="container-title">
-                <p class="title">The Final Countdown</p>
+                <p id="title">The Final Countdown</p>
                 <span class="ml-auto btn" id="darkMode-button"><i id="darkMode-icon" class="fas fa-sun"></i></span>
             </div>
                 
-            <div class="coundown-configurator">
-                <form>
+            <div id="coundown-configurator">
+                <form id="countdown-form">
                     <div class="form-group">
                         <label for="description">Title</label>
                         <input type="text" class="form-control" id="countdown-input-title">
@@ -39,16 +39,16 @@
                 </form>
             </div>
 
-            <div class="coundown-timer" hidden>
+            <div id="coundown-timer" hidden>
                 <ul class="text-center">
-                    <li class="mx-4"><span>3</span> Days</li>
-                    <li class="mx-4"><span>3</span> Hours</li>
-                    <li class="mx-4"><span>3</span> Minutes</li>
-                    <li class="mx-4"><span>3</span> Seconds</li>
+                    <li class="mx-4"><span class="countdown-elements">-</span> Days</li>
+                    <li class="mx-4"><span class="countdown-elements">-</span> Hours</li>
+                    <li class="mx-4"><span class="countdown-elements">-</span> Minutes</li>
+                    <li class="mx-4"><span class="countdown-elements">-</span> Seconds</li>
                 </ul>
                 <button id="reset-countdown" class="btn btn-secondary btn-block">Reset</button>
-                <div class=" my-3 text-center">
-                    <p id="countdown-complete">Countdown Complete!</p>
+                <div class="countdown-complete my-3 text-center">
+                    <p id="countdown-complete-animation">Countdown Complete!</p>
                     <p>Finished on 20/20/20</p>
                 </div>
             </div>
