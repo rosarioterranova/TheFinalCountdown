@@ -4,6 +4,7 @@ let countdownDate = ""
 let coundownValue = null
 let countdownActive = null
 const title = document.querySelector("#title")
+let savedCountdown = null
 
 const second = 1000
 const minute = second * 60
@@ -65,6 +66,13 @@ countdownForm.addEventListener("submit", event => {
     event.preventDefault()
     countdownTitle = event.srcElement[0].value
     countdownDate = event.srcElement[1].value
+
+    savedCountdown = {
+        title: countdownTitle,
+        date: countdownDate
+    }
+    localStorage.setItem("countdown", JSON.stringify(savedCountdown))
+    
     if(!countdownTitle || !countdownDate){
         alert("Please enter the correct values")
     } else {
@@ -79,4 +87,16 @@ resetCountdown.addEventListener("click", () => {
     coundownTimer.hidden = true
     clearInterval(countdownActive)
     countdownDate = ""
-})
+    localStorage.removeItem("countdown")
+});
+
+//Check countdown in local storage
+(() => {
+    if(localStorage.getItem("countdown")){
+        savedCountdown = JSON.parse(localStorage.getItem("countdown"))
+        countdownTitle = savedCountdown.title
+        countdownDate = savedCountdown.date
+        coundownValue = new Date(countdownDate).getTime()
+        updateDOM()
+    }
+})()
