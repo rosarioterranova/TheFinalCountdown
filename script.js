@@ -20,6 +20,10 @@ const coundownTimer = document.querySelector("#coundown-timer")
 const resetCountdown = document.querySelector("#reset-countdown")
 const countdownElements = document.querySelectorAll(".countdown-elements")
 
+//Countdown Complete
+const coundownComplete = document.querySelector("#countdown-complete")
+const coundownCompleteInfo = document.querySelector("#countdown-complete-info")
+
 //Limit Date
 const today = new Date().toISOString().split("T")[0]
 inputDate.setAttribute("min",today)
@@ -39,6 +43,16 @@ const updateDOM = () => {
         for (let i = 0; i < countdownElements.length; i++) {
             countdownElements[i].textContent = distances[i]
         }
+
+        if(distance <= 0){
+            clearInterval(countdownActive)
+            coundownComplete.hidden = false
+            for (const i of countdownElements) {
+                i.textContent = "🥳"
+            }
+            coundownCompleteInfo.textContent = `Finished on ${new Date(Date.now())}`
+        }
+
     },second)
 
     title.textContent = countdownTitle
