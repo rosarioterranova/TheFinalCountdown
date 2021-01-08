@@ -12,12 +12,12 @@ const setDarkMode = enabled => {
     if(enabled){
         document.body.classList.replace("light","dark")
         darkModeIcon.classList.replace("fa-sun","fa-moon")
-        localStorage.setItem("darkMode", true);
+        localStorage.setItem("darkMode", "enabled");
     } else{
         document.body.classList.replace("dark","light")
         darkModeIcon.classList.replace("fa-moon","fa-sun")
-        localStorage.setItem("darkMode", false);
+        localStorage.setItem("darkMode", "disabled");
     }
 }
 
-setDarkMode(localStorage.getItem("darkMode"))
+setDarkMode(localStorage.getItem("darkMode") == "enabled"? true: false)
