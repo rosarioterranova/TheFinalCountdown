@@ -13,6 +13,8 @@
     --border-color: black;
 }
 
+/*---- Dark Mode ---- */
+
 .light{
 	--div-background-color: white;
     --text-color: black;
@@ -32,17 +34,21 @@
     align-items: center;
 }
 
-.container-title{
-    font-size: 2rem;
-}
-
 p,label,li{
     color: var(--text-color);
 }
 
-.title{
+/*---- Title ---- */
+
+.container-title{
     display: flex;
 }
+
+.title{
+    font-size: 2rem;
+}
+
+/*---- Background Video Player ---- */
 
 .video-player{
     position: fixed;
@@ -63,6 +69,8 @@ p,label,li{
     background-color: var(--div-background-color);
     opacity: 40%;
 }
+
+/*---- Window ---- */
 
 .section{
     min-height: 80%;
@@ -87,7 +95,7 @@ li span{
     font-size: 4em;
 }
 
-#countdown-complete-title{
+#countdown-complete{
     font-size: 1.2rem;
     animation: complete 2s infinite;
 }
@@ -107,6 +115,8 @@ li span{
         color: rgb(139, 245, 0);
     }
 }
+
+/*---- Extra for Desktop ---- */
 
 @media (min-width:1025px) {
     .section{
