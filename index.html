@@ -15,30 +15,46 @@
     <div class="video-overlay"></div>
     
     <div class="section">
-        <div class="container">
-            <div class="ui p-3">
-                <div class="title">
-                    <h1>The Final Countdown</h1>
-                    <span class="ml-auto btn" id="darkMode-button"><i id="darkMode-icon" class="fas fa-sun"></i></span>
-                </div>
+        <div class="container p-3">
+            
+            <div class="title">
+                <p class="container-title">The Final Countdown</p>
+                <span class="ml-auto btn" id="darkMode-button"><i id="darkMode-icon" class="fas fa-sun"></i></span>
+            </div>
                 
+            <div class="coundown-configurator">
                 <form>
                     <div class="form-group">
                         <label for="description">Title</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="text" class="form-control" id="countdown-input-title">
                         <small class="form-text text-muted">Enter the title of your countdown</small>
                     </div>
                     <div class="form-group">
                         <label for="date">Time</label>
-                        <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="date" class="form-control" id="countdown-input-date">
                         <small class="form-text text-muted">Enter the time of your countdown</small>
                     </div>
                     <button type="submit" class="btn btn-secondary btn-block">Submit</button>
                 </form>
+            </div>
+
+            <div class="coundown-timer" hidden>
+                <ul class="text-center">
+                    <li class="mx-4"><span>3</span> Days</li>
+                    <li class="mx-4"><span>3</span> Hours</li>
+                    <li class="mx-4"><span>3</span> Minutes</li>
+                    <li class="mx-4"><span>3</span> Seconds</li>
+                </ul>
+                <button id="reset-countdown" class="btn btn-secondary btn-block">Reset</button>
+                <div class=" my-3 text-center">
+                    <p id="countdown-complete-title">Countdown Complete!</p>
+                    <p>Finished on 20/20/20</p>
                 </div>
+            </div>
         </div>
     </div>
     
     <script src="script.js"></script>
+    <script src="darkMode.js"></script>
 </body>
 </html>
